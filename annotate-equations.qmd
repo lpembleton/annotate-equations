@@ -4,7 +4,8 @@ author: "LW Pembleton"
 date: 03 09 2023
 format: 
   pdf:
-    code-block-bg: "abe2ff"
+    highlight-style: atom-one
+    code-block-bg: "#E6E5EE"
     header-includes:
       - \usepackage{annotate-equations}
 ---
@@ -15,15 +16,13 @@ Using the LaTeX [annotate-equations](https://github.com/st--/annotate-equations)
 
 ### Step-by-step example
 
-The following is a simple step-by-step guide to annotating your first equation. Here we will use the genomic selection GEBV equation as the example.
-
-Here's a straightforward step-by-step guide to annotating equations using the annotate-equations package. We'll illustrate with the genomic selection GEBV equation.
+Here's a straightforward step-by-step guide to annotating equations using the annotate-equations package. We'll use the genomic selection GEBV equation as the example.
 
 #### Quarto Setup
 
 Quarto itself will attempt to automatically download and install the annotate-equations package into its LaTeX engine, all you need to do is tell Quarto that you need it by adding the following to your yaml at the top of your .qmd file
 
-```         
+```{{yaml}}
 header-includes:
   - \usepackage{annotate-equations}
 ```
@@ -32,7 +31,7 @@ header-includes:
 
 Start by writing the equation you want to annotate in LaTeX format:
 
-```         
+```{{latex}}         
 \begin{equation*}
   GEBV = \sum_{i}^{n} X_{i} b_{i}
 \end{equation*}
@@ -51,7 +50,7 @@ Break down the equation into individual nodes. To highlight a node, enclose it i
 
 *For example:*
 
-```         
+```{{latex}}          
 \begin{equation*}
   \eqnmark[purple]{node1}{GEBV}
   \tikzmarknode{node2}{=}
@@ -82,7 +81,7 @@ Now, introduce annotations to each node using the `\annotate[tikzoptions]{annota
 
 *For example:*
 
-```         
+```{{latex}}          
 \begin{equation*}
   \eqnmark[purple]{node1}{GEBV}
   \tikzmarknode{node2}{=}
@@ -121,7 +120,7 @@ For some equations a variable will appear multiple times. In these scenarios you
 
 An example using the Hardy-Weinberg equation:\
 
-```         
+```{{latex}}          
 \begin{equation*}
   \eqnmarkbox[green]{node1}{p}
   \tikzmarknode{node2}{^{2}}
